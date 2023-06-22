@@ -4,13 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
+import { BleComponent } from './ble/ble.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WebBluetoothModule.forRoot({
+      // enableTracing: true // or false, this will enable logs in the browser's console
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
